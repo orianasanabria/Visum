@@ -1,0 +1,27 @@
+.banner{
+  // background-color: $accent;
+  background-image: url(banner-bg.png);
+  height: 475px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // clip-path: polygon(100% 0, 100% 85%, 0 100%, 0 15%);
+  // position: relative;
+  &__info{
+    width: 40%;
+  }
+  &__title{
+    font-size: $xxxxx-large;
+    margin-bottom: 1rem;
+  }
+  &__text{
+    font-size: $small;
+  }
+  &__img{
+    transform: scaleX(-1);
+    position: absolute;
+    right: 150px;
+    width: 520px;
+    padding-bottom: 60px;
+  }
+}

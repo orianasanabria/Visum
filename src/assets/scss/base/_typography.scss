@@ -1,0 +1,49 @@
+h1, h2, h3, h4, h5 {
+    font-family: $barlow;
+  }
+  
+  h1 {
+    font-size: $xxxxx-large;
+    font-weight: $bold;
+  }
+  
+  h2 {
+    font-size: $xxxx-large;
+    font-weight: $bold;
+  }
+  
+  h3 {
+    font-size: $x-large;
+    font-weight: $bold;
+  }
+  
+  h4 {
+    font-size: xx-large;
+    font-weight: $bold;
+  }
+  
+  .subtitle {
+    font-family: $barlow;
+    color: $gray;
+    font-size: $medium;
+    letter-spacing: 6px;
+    font-weight: $regular;
+  }
+  
+  .price {
+    font-size: $medium;
+    font-weight: $semi-bold;
+  }
+  
+  p {
+    font-family: $poppins;
+    font-size: $regular;
+    font-weight: $regular;
+    line-height: 1.8;
+}
+
+button {
+    font-family: $poppins;
+    font-weight: $regular;
+    font-size: $small;
+}

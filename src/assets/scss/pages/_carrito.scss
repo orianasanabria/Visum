@@ -1,0 +1,93 @@
+.cart-title{
+  font-size: $large;
+  font-family: $poppins;
+  font-weight:$light;
+}
+.item{
+  background-color: $medium-gray;
+  display: flex;
+  padding: .5rem 1.5rem;
+  border-radius: 0.3125rem;
+  justify-content: space-between;
+  align-items: center;
+  &__img{
+    display: flex;
+    justify-content: center;
+    width: 9rem;
+    img{
+      max-width: 100%;
+      max-height: 6rem;
+    }
+  }
+  &__info{
+    width:12rem;
+    &-name{
+      font-size: 1.2rem;
+      font-family: $poppins;
+      font-weight: $light;
+    }
+    &-spec{
+      color: $gray;
+      font-size: $small;
+    }
+  }
+  &__number{
+    width:7rem;
+    &-input{
+      width: 100%;
+      background-color: transparent;
+      color: $white;
+      border-radius: 50px;
+      &:active, &:focus{
+        background-color: transparent;
+        color: $white;
+        
+      }
+    }
+  }
+  &__price{
+    display: flex;
+    justify-content: center;
+    width:8rem;
+    p{
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+  }
+  &__delete{
+    &:hover{
+      cursor: pointer;
+      transition: color .1s linear;
+      color: rgb(255, 53, 53);
+    }
+  }
+}
+
+.checkout{
+  height: fit-content;
+  background-color: $accent-gray;
+  border-radius: 0.3125rem;
+  &__info{
+    &-title{  
+      font-size: $large;
+      font-family: $poppins;
+      font-weight: $light;
+    }
+  }
+  &__form{
+    ::placeholder{
+      color: $light-gray;
+    }
+    &-input{
+      border-radius: 5px;
+      background-color: transparent;
+      &:active, &:focus{
+        border-radius: 5px;
+        background-color: transparent;
+      }
+    }
+  }
+  &__button{
+    width: 100%;
+  }
+}
