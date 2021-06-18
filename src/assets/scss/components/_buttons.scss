@@ -1,12 +1,19 @@
 .btn-size{
-  padding: .6rem 2rem;
+  padding: .5rem 2rem;
+}
+
+.btn-rounded{
   border-radius: 50px;
 }
 
 .btn-outlined{
   background-color: transparent;
   color: $gray;
-  border: 2px $gray solid;
+  border: 1.5px $gray solid;
+  &:hover{
+    background-color: $light-gray;
+    color: $medium-gray;
+  }
   &:focus{
     background-color: $light-gray;
     color: $medium-gray;
@@ -14,12 +21,25 @@
 }
 
 .btn-accent{
+  color: $white;
   background-color: $accent;
-  border: none;
+  border: 1.5px $accent solid;
   &:hover{
+    color: $white;
     background-color: $accent-hover;
   }
   &:focus{
+    color: $white;
     background-color: $accent-focus;
   }
+}
+
+.favorite{
+  cursor: pointer;
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  color: red;
+  font-size: $large;
+  color: $light-gray;
 }

@@ -1,8 +1,4 @@
 @import 'nav';
 @import 'header';
 @import 'categories';
-
-.container {
-  display: grid;
-  grid-template-rows: repeat(6, auto);
-}
+@import 'footer';

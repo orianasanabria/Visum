@@ -1,14 +1,14 @@
 <template>
   <div class="product-categorie">
     <b-row class="mb-5">
-      <b-col class="imagewrapper" cols="12">
-        <b-img class="image" src="img/bannercategorie.png" />
+      <b-col cols="12">
+        <b-img class="categorie-banner" src="img/bannercategorie.png" />
       </b-col>
     </b-row>
     <b-container>
       <b-row class="mb-5">
         <b-col cols="12">
-          <MainCard :topSellers="topSellers" />
+          <MainCard :products="smartwatches" />
         </b-col>
       </b-row>
     </b-container>
@@ -24,14 +24,17 @@ export default {
     MainCard,
   },
   computed: {
-    ...mapState(["topSellers"]),
+    ...mapState(["smartwatches"]),
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.image {
+.categorie-banner {
   height: auto;
+  min-height: 7rem;
+  object-position: right;
+  object-fit: cover;
   width: 100%;
 }
 </style>

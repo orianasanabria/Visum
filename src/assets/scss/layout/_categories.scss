@@ -1,94 +1,166 @@
 .categories{
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: repeat(3, 32.8%);
-    grid-template-rows: repeat(2, 17rem);
-    margin-top: 7.5rem;
-    &__item {
-      &-1 {
-        grid-column: 1;
-        grid-row: 1;
-        background-color: $white;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  grid-template-rows: repeat(4, 1fr);
+  grid-row-gap: .5rem;
+  margin-top: 1.5rem;
+  img{
+    width: 100%;
+    object-fit: cover;
+    max-width: 12rem;
+  }
+  h3{
+    width: 7ch;
+    margin: 0 .5rem;
+    line-height: .8;
+    font-weight: $extra-bold;
+    font-size: $xxxx-large;
+  }
+  &__item{
+    &-1, &-2, &-3, &-4{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    } 
+    &-1 {
+      color: $dark-gray;
+      background-color: $white;
+      &:hover{
+        transition: color .2s ease-in-out;
+        color: $accent;
+      }
+      h3{
+        width: 5ch;
+      }
+    }
+    &-2 {
+      color: $white;
+      background-color: $accent;
+      &:hover{
+        transition: color .2s ease-in-out;
         color: $dark-gray;
+      }
+    }
+    &-3{
+      background-color: $medium-gray;
+      flex-direction: row-reverse;
+      &:hover{
+        transition: color .2s ease-in-out;
+        color: $gray;
+      }
+      img{
+        height: 100%;
+        object-fit: fill;
+      }
+    }
+    &-4{
+      color: $dark-gray;
+      background-color: $gray;
+      flex-direction: row-reverse;      
+      &:hover{
+        transition: color .2s ease-in-out;
+        color: $white;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .categories{
+    grid-template-rows: repeat(2, 220px);
+    grid-column-gap: .5rem;
+    overflow: hidden;
+  }
+}
+
+@media (min-width: 992px) {
+  .categories{
+    grid-gap: 1rem;
+    grid-template-rows: repeat(2, 270px);
+    margin-top: 7.5rem;
+    img {
+      object-fit: contain;
+      max-width: none;
+    }
+    h3{
+      margin: .5rem;
+      line-height: .9;
+    }
+    &__item {
+      &-1, &-2, &-3, &-4{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        overflow: hidden;
+      }
+      &-1 {
         position: relative;
         h3{
-          width: 5ch;
-          font-size: $xxxxx-large;
-          font-weight: $extra-bold;
-          line-height: .8;
+          font-size: $xxxxxx-large;
+          width: 4.5ch;
           position: absolute;
-          bottom: .9rem;
           right: 0;
+          bottom: 0;
         }
         img{
-          position: absolute;
-          top: 0;
-          width: 15rem;
+          width: 60%;
         }
       }
       &-2 {
-        grid-column: 3 ;
         grid-row: 1 / 3;
-        background-color: $accent;
-        color: $white;
-        overflow: hidden;
         position: relative;
+        justify-content: center;
         img{
-          width: 33rem;
+          width: 30rem;
           transform: rotate(-45deg);
-          bottom: .6rem;
-          left: -4rem;
           position: absolute;
+          bottom: .6rem;
+          right: -6rem;
         }
         h3{
-          margin: 2rem 0 0 2rem;
+          margin-top: 2rem;
           font-size: $xxxxxxx-large;
-          font-weight: $extra-bold;
-          line-height: .9;
         }
       }
       &-3 {
-        grid-column: 2;
-        grid-row: 1 ;
-        background-color: $medium-gray;
-        color: $white;
+        justify-content: space-between;
         position: relative;
         h3{
-          width: 7ch;
           font-size: $xxxx-large;
-          font-weight: $extra-bold;
-          line-height: .9;
           position: absolute;
           right: 0;
           top: .9rem;
         }
         img{
-          width: 15.5rem;
+          height: 75%;
+          width: 60%;
+          object-fit: fill;
           position: absolute;
           bottom: 0;
+          left: 0;
         }
       }
       &-4 {
         grid-column: 1 / 3;
         grid-row: 2;
-        background-color: $gray;
-        color: $dark-gray;
-        display: flex;
+        flex-direction: row;
         align-items: center;
-        justify-content: space-between;
-        position: relative;
         padding: 0 2rem;
         h3{
-          font-size: $xxxxxx-large;
-          font-weight: $extra-bold;
-          line-height: .9;
           width: 5ch;
+          font-size: $xxxxxx-large;
         }
         img{
           width: 18.75rem;
+          height: 100%;
         }
       }
     }
   }
+}
 
-  
+@media (min-width: 1400px) {
+  .categories{
+    margin-top: 210px;
+  }
+}

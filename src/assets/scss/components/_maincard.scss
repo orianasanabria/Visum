@@ -1,6 +1,9 @@
 .maincard {
   background-color: $medium-gray;
   min-height: 100%;
+  position: relative;
+  padding-top: 1rem;
+
   &__img{
     height: 200px;
     max-width: 100%;

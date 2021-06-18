@@ -1,6 +1,6 @@
 <template>
   <div class="banner my-5 d-flex align-items-center">
-    <b-container class="d-flex mt-5 align-items-center">
+    <b-container class="banner__container">
       <div class="banner__info">
         <h2 class="banner__title text-uppercase">Surface Studio</h2>
         <p class="banner__text">
@@ -21,5 +21,3 @@ export default {
   name: "MainBanner",
 };
 </script>
-
-<style></style>

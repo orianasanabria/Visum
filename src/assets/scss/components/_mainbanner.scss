@@ -1,17 +1,18 @@
 .banner{
-  // background-color: $accent;
   background-image: url(banner-bg.png);
-  height: 475px;
+  height: 100%;
+  padding: 5rem 0;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  // clip-path: polygon(100% 0, 100% 85%, 0 100%, 0 15%);
-  // position: relative;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
   &__info{
-    width: 40%;
+    margin-top: 3rem;
+    text-align: center;
   }
   &__title{
-    font-size: $xxxxx-large;
     margin-bottom: 1rem;
   }
   &__text{
@@ -19,9 +20,37 @@
   }
   &__img{
     transform: scaleX(-1);
-    position: absolute;
-    right: 150px;
-    width: 520px;
-    padding-bottom: 60px;
+    width: 80%;
+  }
+}
+
+@media (min-width: 768px) {
+  .banner{
+    background-image: url(banner-bg.png);
+    height: 475px;
+    flex-wrap: wrap;
+    &__info{
+      width: 50%;
+      text-align: left;
+    }
+    &__title{
+      font-size: $xxxxx-large;
+    }
+    &__img{
+      width: 520px;
+      position: absolute;
+      right: 80px;
+      padding-bottom: 60px;
+    }
+  }
+}
+
+@media (min-width: 1281px) {
+  .banner{
+    background-color: #FF5A38;
+    height: 360px;
+    &__info{
+      margin-top: 0;
+    }
   }
 }

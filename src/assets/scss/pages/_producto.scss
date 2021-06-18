@@ -1,0 +1,58 @@
+.product{
+	margin: 2rem 0 4rem 0;
+	&__info{
+		padding-left: 2rem;
+	}
+	&__img{
+		position: relative;
+	}
+}
+
+.categorie{
+	font-size: $regular;
+	text-transform: uppercase;
+	color: $gray;
+	font-weight:$regular;
+	margin-bottom: .5rem;
+	&__hover{
+		color: $gray;
+	}
+}
+
+.wrapper{
+	background-color: $white;
+	padding: 5rem;
+	&__img{
+		width: 100%;
+		height: 100%;
+	}
+
+}
+
+.gallery{
+	width: 100px;
+	position: absolute;
+	top: 10px;
+	right: -20px;
+	&__img{
+		cursor: pointer;
+		margin-bottom: .5rem;
+		width: 4rem;
+	}
+}
+
+.specs{
+	display: flex;
+	&__item{
+		color: $gray;
+		font-size: $x-small;
+		padding: .4rem 2rem;
+		border-radius: 50px;
+		margin: .4rem 1rem 1rem 0;
+		border: 1px solid $light-gray;
+	}
+}
+
+.heart-icon{
+	margin-right: .5rem;
+}
