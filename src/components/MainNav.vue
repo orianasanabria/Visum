@@ -12,16 +12,24 @@
               <b-collapse id="nav-collapse" is-nav>
                 <b-navbar-nav class="ms-auto d-flex align-items-center">
                   <b-nav-item class="navlink ms-2" to="/">Home</b-nav-item>
-                  <b-nav-item class="navlink ms-2" to="/categoria"
+                  <b-nav-item
+                    class="navlink ms-2"
+                    :to="`/categoria/${smartwatches.id}`"
                     >SmartWatches</b-nav-item
                   >
-                  <b-nav-item class="navlink ms-2" to="/categoria"
+                  <b-nav-item
+                    class="navlink ms-2"
+                    :to="`/categoria/${smartphones.id}`"
                     >SmartPhones</b-nav-item
                   >
-                  <b-nav-item class="navlink ms-2" to="/categoria"
+                  <b-nav-item
+                    class="navlink ms-2"
+                    :to="`/categoria/${notebooks.id}`"
                     >Notebooks</b-nav-item
                   >
-                  <b-nav-item class="navlink ms-2" to="/categoria"
+                  <b-nav-item
+                    class="navlink ms-2"
+                    :to="`/categoria/${keyboards.id}`"
                     >Keyboards</b-nav-item
                   >
                   <b-nav-item to="/favoritos" class="navlink ms-4" active>
@@ -45,7 +53,11 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   name: "MainNav",
+  computed: {
+    ...mapState(["smartwatches", "smartphones", "notebooks", "keyboards"]),
+  },
 };
 </script>

@@ -31,9 +31,15 @@ const routes = [{
   },
   // ALEXA PLAY THIS IS ME TRYING
   {
-    path: '/categoria',
+    path: '/categoria/:id',
     name: 'Categoria',
     component: () => import( /* webpackChunkName: "categoria" */ '../views/Categoria.vue'),
+    children: [{
+      path: ':id',
+      name: 'MainCard',
+      component: () => import( /* webpackChunkName: "maincard" */ '../components/MainCard.vue'),
+      props: true
+    }]
   },
 ]
 

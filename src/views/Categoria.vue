@@ -2,13 +2,16 @@
   <div class="product-categorie">
     <b-row class="mb-5">
       <b-col cols="12">
-        <b-img class="categorie-banner" src="img/bannercategorie.png" />
+        <b-img
+          class="categorie-banner"
+          :src="`../../img/${$route.params.id}.jpg`"
+        />
       </b-col>
     </b-row>
     <b-container>
       <b-row class="mb-5">
         <b-col cols="12">
-          <MainCard :products="smartwatches" />
+          <MainCard :products="getCategorie" />
         </b-col>
       </b-row>
     </b-container>
@@ -24,7 +27,18 @@ export default {
     MainCard,
   },
   computed: {
-    ...mapState(["smartwatches"]),
+    ...mapState(["categories"]),
+    getCategorie() {
+      let param = this.$route.params.id;
+      if (param === "smartwatches") return this.categories.smartwatches;
+      else if (param === "smartphones") return this.categories.smartphones;
+      else if (param === "notebooks") return this.categories.notebooks;
+      else if (param === "keyboards") return this.categories.keyboards;
+      else return;
+    },
+  },
+  mounted() {
+    this.getCategorie;
   },
 };
 </script>

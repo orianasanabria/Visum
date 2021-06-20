@@ -7,7 +7,6 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     categories: [],
-    banners: [],
     smartwatches: [],
     smartphones: [],
     notebooks: [],
@@ -25,12 +24,16 @@ export default new Vuex.Store({
         state.notebooks = el.notebooks;
         state.keyboards = el.keyboards;
       });
+    },
+    modifyProducts(state) {
       Object.entries(state.categories).forEach(([key, value]) => {
+        value.id = key;
         value.filter(el => {
+          if (el.price) el.price = el.price.toLocaleString().replace(',', '.').replace(',', '.');
           if (el.bestSeller === true) state.bestSellers.push(el);
         })
       });
-    },
+    }
   },
   actions: {
     async getData({
@@ -41,6 +44,7 @@ export default new Vuex.Store({
         const req = await axios(url);
         const data = req.data;
         commit("getProducts", data)
+        commit("modifyProducts")
       } catch (error) {
         console.log("Commit error", error);
       }
