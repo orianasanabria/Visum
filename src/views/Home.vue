@@ -43,20 +43,20 @@
         </b-row>
       </header>
       <!-- Categories Section | Start -->
-      <section class="categories text-uppercase">
-        <router-link class="categories__item-1" to="/categoria">
+      <section class="categories text-uppercase" @click="scrollUp">
+        <router-link class="categories__item-1" :to="`/${smartwatches.id}`">
           <b-img src="img/samsungwatch.png" alt="Smart Watches" />
           <h3>Wat-ches</h3>
         </router-link>
-        <router-link class="categories__item-2" to="/categoria">
+        <router-link class="categories__item-2" :to="`/${keyboards.id}`">
           <h3>Key-boards</h3>
           <b-img src="img/keychron.png" alt="Smart Watches" />
         </router-link>
-        <router-link class="categories__item-3" to="/categoria">
+        <router-link class="categories__item-3" :to="`/${smartphones.id}`">
           <h3>Smart-Phones</h3>
           <b-img src="img/samsung.png" alt="Smart Watches" />
         </router-link>
-        <router-link class="categories__item-4" to="/categoria">
+        <router-link class="categories__item-4" :to="`/${notebooks.id}`">
           <b-img src="img/macbook.png" alt="Smart Watches" />
           <h3>Note-books</h3>
         </router-link>
@@ -90,8 +90,19 @@ export default {
     MainCard,
     MainBanner,
   },
+  methods: {
+    scrollUp() {
+      window.scrollTo(0, 0);
+    },
+  },
   computed: {
-    ...mapState(["bestSellers"]),
+    ...mapState([
+      "bestSellers",
+      "smartwatches",
+      "smartphones",
+      "notebooks",
+      "keyboards",
+    ]),
   },
 };
 </script>

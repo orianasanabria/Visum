@@ -3,13 +3,19 @@
   min-height: 100%;
   position: relative;
   padding-top: 1rem;
+  cursor: pointer;
+
+  &:hover{
+    transition: box-shadow .3s;
+    box-shadow: 0px 10px 21px 13px rgba(0, 0, 0, 0.3);
+  }
 
   &__img{
     height: 200px;
     max-width: 100%;
   }
   &__text{
-    min-height: 115px;
+    min-height: 100px;
     padding: .5rem 2rem;
     font-size: $small;
   }

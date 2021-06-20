@@ -12,24 +12,16 @@
               <b-collapse id="nav-collapse" is-nav>
                 <b-navbar-nav class="ms-auto d-flex align-items-center">
                   <b-nav-item class="navlink ms-2" to="/">Home</b-nav-item>
-                  <b-nav-item
-                    class="navlink ms-2"
-                    :to="`/categoria/${smartwatches.id}`"
+                  <b-nav-item class="navlink ms-2" :to="`/${smartwatches.id}`"
                     >SmartWatches</b-nav-item
                   >
-                  <b-nav-item
-                    class="navlink ms-2"
-                    :to="`/categoria/${smartphones.id}`"
+                  <b-nav-item class="navlink ms-2" :to="`/${smartphones.id}`"
                     >SmartPhones</b-nav-item
                   >
-                  <b-nav-item
-                    class="navlink ms-2"
-                    :to="`/categoria/${notebooks.id}`"
+                  <b-nav-item class="navlink ms-2" :to="`/${notebooks.id}`"
                     >Notebooks</b-nav-item
                   >
-                  <b-nav-item
-                    class="navlink ms-2"
-                    :to="`/categoria/${keyboards.id}`"
+                  <b-nav-item class="navlink ms-2" :to="`/${keyboards.id}`"
                     >Keyboards</b-nav-item
                   >
                   <b-nav-item to="/favoritos" class="navlink ms-4" active>

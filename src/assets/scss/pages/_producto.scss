@@ -19,6 +19,14 @@
 	}
 }
 
+.categorie-banner {
+	height: auto;
+	min-height: 7rem;
+	object-position: right;
+	object-fit: cover;
+	width: 100%;
+}
+
 .wrapper{
 	background-color: $white;
 	padding: 5rem;

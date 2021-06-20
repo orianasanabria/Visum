@@ -12,13 +12,13 @@ export default new Vuex.Store({
     notebooks: [],
     keyboards: [],
     bestSellers: [],
+    product: [],
   },
   mutations: {
-    getProducts(state, payload) {
+    getCategories(state, payload) {
       if (!payload) return;
       payload.map(el => {
         state.categories = el;
-        state.banners = el.banners;
         state.smartwatches = el.smartwatches;
         state.smartphones = el.smartphones;
         state.notebooks = el.notebooks;
@@ -33,7 +33,11 @@ export default new Vuex.Store({
           if (el.bestSeller === true) state.bestSellers.push(el);
         })
       });
-    }
+    },
+    getProduct(state, payload) {
+      const product = payload;
+      state.product = product;
+    },
   },
   actions: {
     async getData({
@@ -43,7 +47,7 @@ export default new Vuex.Store({
         const url = "https://us-central1-icreatedthisapi.cloudfunctions.net/app/api/visum";
         const req = await axios(url);
         const data = req.data;
-        commit("getProducts", data)
+        commit("getCategories", data)
         commit("modifyProducts")
       } catch (error) {
         console.log("Commit error", error);

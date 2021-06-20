@@ -15,11 +15,6 @@ const routes = [{
     component: () => import( /* webpackChunkName: "carrito" */ '../views/Carrito.vue')
   },
   {
-    path: '/producto',
-    name: 'Producto',
-    component: () => import( /* webpackChunkName: "producto" */ '../views/Producto.vue')
-  },
-  {
     path: '/favoritos',
     name: 'Favoritos',
     component: () => import( /* webpackChunkName: "favoritos" */ '../views/Favoritos.vue')
@@ -29,17 +24,15 @@ const routes = [{
     name: 'NotFound',
     component: () => import( /* webpackChunkName: "notfound" */ '../views/NotFound.vue')
   },
-  // ALEXA PLAY THIS IS ME TRYING
   {
-    path: '/categoria/:id',
+    path: '/:id',
     name: 'Categoria',
     component: () => import( /* webpackChunkName: "categoria" */ '../views/Categoria.vue'),
-    children: [{
-      path: ':id',
-      name: 'MainCard',
-      component: () => import( /* webpackChunkName: "maincard" */ '../components/MainCard.vue'),
-      props: true
-    }]
+  },
+  {
+    path: '/producto/:id',
+    name: 'Producto',
+    component: () => import( /* webpackChunkName: "producto" */ '../views/Producto.vue')
   },
 ]
 
