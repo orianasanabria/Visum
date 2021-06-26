@@ -1,0 +1,76 @@
+.popup{
+	display: grid;
+	place-items: center;
+	&__loginbanner{
+		background-image: url(macbook-login.png);
+		height: 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	&__signinbanner{
+		background-image: url(watch-login.jpg);
+		height: 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+}
+.contain {
+	width: 100%;
+	height: 70vh;
+	background-color:$medium-gray;
+	border-radius: 5px;
+	h2{
+		font-size: $x-large;
+		font-weight: $thin;
+	}
+	p{
+		margin: 1rem 3rem 1.5rem 2rem;
+		font-weight: $light;
+		font-size: $small;
+		line-height: 1.5;
+	}
+}
+.login,
+.signin {
+	display: grid;
+	place-items: center;
+	padding: 3rem 2rem;
+	width: 100%;
+}
+.new-user {
+	color: $light-gray;
+	font-size: $xx-small;
+}
+.register {
+	height: fit-content;
+	border-radius: 0.3125rem;
+	&__info {
+		&-title {
+			font-size: $large;
+			font-family: $poppins;
+			font-weight: $light;
+		}
+	}
+	&__form {
+		width: 80%;
+		::placeholder {
+			color: $light-gray;
+		}
+		&-input {
+			font-size: $small;
+			background-color: transparent;
+			color: $light-gray;
+			&:active,
+			&:focus {
+				color: $light-gray;
+				background-color: transparent;
+			}
+		}
+	}
+	&__button {
+		width: 80%;
+		font-size: $small;
+	}
+}

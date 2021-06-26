@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "visumshop"
+    "default": "visumshop",
+    "visumshop": "visumshop"
   }
 }

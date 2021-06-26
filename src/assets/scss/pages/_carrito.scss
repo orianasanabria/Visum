@@ -41,7 +41,6 @@
       &:active, &:focus{
         background-color: transparent;
         color: $white;
-        
       }
     }
   }
@@ -63,31 +62,35 @@
   }
 }
 
-.checkout{
+.checkout {
   height: fit-content;
-  background-color: $accent-gray;
   border-radius: 0.3125rem;
-  &__info{
-    &-title{  
+  background-color: $medium-gray;
+  &__info {
+    &__title {
       font-size: $large;
       font-family: $poppins;
       font-weight: $light;
     }
   }
-  &__form{
-    ::placeholder{
-      color: $light-gray;
+  &__cupon{
+    height: auto;
+    justify-content: space-between;
+    &__input{
+      width: 73%;
     }
-    &-input{
-      border-radius: 5px;
-      background-color: transparent;
-      &:active, &:focus{
-        border-radius: 5px;
-        background-color: transparent;
-      }
+    &__btn{
+      width: 25%;
+      height: 100%;
     }
   }
-  &__button{
+  &__total{
+    border-top: 1px solid gray;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__button {
     width: 100%;
+    font-size: $small;
   }
 }

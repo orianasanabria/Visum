@@ -8,7 +8,7 @@
       </b-row>
       <b-row class="mb-5">
         <b-col cols="12">
-          <MainCard :topSellers="topSellers" />
+          <MainCard :products="favorites" />
         </b-col>
       </b-row>
     </b-container>
@@ -24,7 +24,7 @@ export default {
     MainCard,
   },
   computed: {
-    ...mapState(["topSellers"]),
+    ...mapState(["favorites"]),
   },
 };
 </script>

@@ -1,45 +1,48 @@
-.btn-size{
+.btn-size {
   padding: .5rem 2rem;
 }
 
-.btn-rounded{
+.btn-rounded {
   border-radius: 50px;
 }
 
-.btn-outlined{
+.btn-outlined {
   background-color: transparent;
   color: $gray;
   border: 1.5px $gray solid;
-  &:hover{
+
+  &:hover {
     background-color: $light-gray;
     color: $medium-gray;
   }
-  &:focus{
+
+  &:focus {
     background-color: $light-gray;
     color: $medium-gray;
   }
 }
 
-.btn-accent{
+.btn-accent {
   color: $white;
   background-color: $accent;
   border: 1.5px $accent solid;
-  &:hover{
+
+  &:hover {
     color: $white;
     background-color: $accent-hover;
   }
-  &:focus{
+
+  &:focus {
     color: $white;
     background-color: $accent-focus;
   }
 }
 
-.favorite{
+.favorite {
   cursor: pointer;
   position: absolute;
   top: 1.25rem;
   right: 1.25rem;
-  color: red;
   font-size: $large;
   color: $light-gray;
 }

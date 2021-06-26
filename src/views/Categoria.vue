@@ -34,7 +34,7 @@ export default {
     NotFound,
   },
   computed: {
-    ...mapState(["categories"]),
+    ...mapState(["categories", "favorites"]),
     categorie() {
       let param = this.$route.params.id;
       if (param === "smartwatches") return this.categories.smartwatches;
