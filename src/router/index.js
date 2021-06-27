@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+// import router from './router'
 
 
 Vue.use(VueRouter)
@@ -28,6 +29,9 @@ const routes = [{
   {
     path: '/checkout',
     name: 'Checkout',
+    meta: {
+      requiresAuth: true
+    },
     component: () => import( /* webpackChunkName: "checkout" */ '../views/Checkout.vue')
   },
   {
@@ -57,6 +61,19 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  const isAuthenticated = localStorage.getItem("login")
+  if (to.matched.some(route => route.meta.requiresAuth)) {
+    if (!isAuthenticated) {
+      next('/checkout')
+    } else {
+      next();
+    }
+  } else {
+    next();
+  }
 })
 
 export default router

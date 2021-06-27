@@ -8,7 +8,7 @@
       </b-row>
       <b-row class="mb-5">
         <b-col cols="12">
-          <MainCard :products="favorites" />
+          <FavoritesCard :products="favorites" />
         </b-col>
       </b-row>
     </b-container>
@@ -17,11 +17,11 @@
 
 <script>
 import { mapState } from "vuex";
-import MainCard from "@/components/MainCard.vue";
+import FavoritesCard from "@/components/FavoritesCard.vue";
 export default {
   name: "Categoria",
   components: {
-    MainCard,
+    FavoritesCard,
   },
   computed: {
     ...mapState(["favorites"]),
