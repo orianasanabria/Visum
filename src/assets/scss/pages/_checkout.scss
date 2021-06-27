@@ -1,0 +1,41 @@
+@media (max-width: 768px) {
+	.sm-width{
+		width: 100%;
+	}
+}
+
+
+.main-title{
+	font-family: $poppins;
+	font-weight: normal;
+	font-size: $x-large;
+}
+.subtitles{
+	font-family: $poppins;
+	font-weight: normal;
+	font-size: $medium;
+	margin-bottom: 1.5rem;
+}
+.payment{
+	height: 8rem;
+	width: 10rem;
+	padding: 1.2rem 0;
+	background-color: #343a47;
+	border-radius: 5px;
+	transition: background-color .4s ease;
+	cursor: pointer;
+	&:first-child{
+		margin-right: 1rem;
+	}
+	&:active, &:hover, &:focus{
+		border: 2px solid white;
+		background-color: #51596b;
+	}
+	&__logo{
+		height: 65%;
+	}
+	&__name{
+		font-size: $small;
+		margin-top: .5rem;
+	}
+}

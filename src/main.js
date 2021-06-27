@@ -13,16 +13,16 @@ Vue.use(BootstrapVue)
 
 Vue.config.productionTip = false
 
-// router.beforeEach((to, from, next) => {
-//   const isAuthenticated = localStorage.getItem("login")
-//   if (to.name !== 'Login' && !isAuthenticated) next({
-//     name: 'Login'
-//   })
-//   else if (to.name === 'Login' && isAuthenticated) next({
-//     name: 'Home'
-//   })
-//   else next()
-// })
+router.beforeEach((to, from, next) => {
+  const isAuthenticated = localStorage.getItem("login")
+  if (to.name !== 'Login' && !isAuthenticated) next({
+    name: 'Login'
+  })
+  else if (to.name === 'Login' && isAuthenticated) next({
+    name: 'Checkout'
+  })
+  else next()
+})
 
 new Vue({
   router,

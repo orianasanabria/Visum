@@ -74,7 +74,7 @@ export default {
         console.log(req);
         if (req && req !== null) {
           localStorage.setItem("login", "logueado");
-          this.$router.push("/");
+          this.$router.push("/checkout");
         }
       } catch (error) {
         const errorCode = error.code;

@@ -1,15 +1,17 @@
+
+
 .popup{
 	display: grid;
 	place-items: center;
 	&__loginbanner{
-		background-image: url(macbook-login.png);
+		background-image: url(../img/macbook-login.png);
 		height: 100%;
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
 	&__signinbanner{
-		background-image: url(watch-login.jpg);
+		background-image: url(../img/watch-login.jpg);
 		height: 100%;
 		background-position: center;
 		background-repeat: no-repeat;
