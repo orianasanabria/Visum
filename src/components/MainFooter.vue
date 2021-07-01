@@ -16,6 +16,6 @@
 
 <script>
 export default {
-  name: "MainNav",
+  name: "MainFooter",
 };
 </script>

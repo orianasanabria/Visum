@@ -25,11 +25,7 @@
                 </p>
               </div>
               <div class="item__number">
-                <b-form-input
-                  class="item__number-input"
-                  type="number"
-                  :value="product.quantity"
-                ></b-form-input>
+                <p class="item__number-input">{{ product.quantity }}</p>
               </div>
               <div class="item__price">
                 <p>${{ newPrice(product) }}</p>

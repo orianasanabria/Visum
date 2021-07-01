@@ -34,10 +34,17 @@
   &__number{
     width:7rem;
     &-input{
-      width: 100%;
+      display: flex;
+      justify-content: center;
+      width: 80%;
       background-color: transparent;
       color: $white;
+      border: 1px solid $white;
       border-radius: 50px;
+      padding: .3rem 0;
+      .minus, .plus{
+        cursor: pointer;
+      }
       &:active, &:focus{
         background-color: transparent;
         color: $white;
