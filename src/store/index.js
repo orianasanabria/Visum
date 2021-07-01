@@ -70,11 +70,6 @@ export default new Vuex.Store({
       const product = payload;
       state.selectedProduct = product;
     },
-    getPicture(state, payload) {
-      if (!payload) return;
-      const picture = payload;
-      state.selectedProduct.img = picture;
-    },
     buyProduct(state, payload) {
       if (!payload) return;
       const quantity = 1;
@@ -118,16 +113,13 @@ export default new Vuex.Store({
     getCouponsLocal(state, payload) {
       if (!payload) return;
       state.coupons = payload;
-      console.log(state.coupons);
     },
     addFavoriteLocal(state, payload) {
       const exists = state.favorites.find(el => el.id === payload.id)
       if (!exists) state.favorites.push(payload)
-      console.log("add", payload);
     },
     deleteFavoriteLocal(state, payload) {
       state.favorites = payload;
-      console.log("delete", payload);
     },
   },
   actions: {

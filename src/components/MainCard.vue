@@ -12,7 +12,7 @@
       <div class="maincard text-center">
         <span
           class="material-icons heart-icon favorite green-border"
-          @click="toggleFavorite(product), heartToggle($event.target, product)"
+          @click="toggleFavorite(product)"
           >favorite_border
         </span>
         <router-link :to="`/${product.categorie}/${product.id}`">
@@ -68,15 +68,6 @@ export default {
         .replace(",", ".")
         .replace(",", ".");
       return newPrice;
-    },
-    heartToggle(target, product) {
-      this.favorites.find((el) => {
-        if (el.id !== product.id) {
-          target.textContent = "favorite";
-        } else {
-          target.textContent = "favorite_border";
-        }
-      });
     },
     ...mapMutations(["getProduct", "buyProduct"]),
     ...mapActions(["toggleFavorite"]),

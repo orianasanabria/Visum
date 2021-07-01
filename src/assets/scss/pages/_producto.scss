@@ -12,8 +12,11 @@
 	font-size: $regular;
 	text-transform: uppercase;
 	color: $gray;
-	font-weight:$regular;
 	margin-bottom: .5rem;
+	&-sm{
+		font-size: $small;
+
+	}
 	&__hover{
 		color: $gray;
 	}
@@ -60,11 +63,6 @@
 		border: 1px solid $light-gray;
 	}
 }
-
-.heart-icon{
-	margin-right: .5rem;
-}
-
 .goback{
 	width: fit-content;
 }

@@ -29,7 +29,7 @@
                 class="detail-wrapper px-5 d-flex align-items-center justify-content-end"
               >
                 <div class="detail mx-5">
-                  <h3 class="detail__title">Apple Pay</h3>
+                  <h3 class="detail__title">Quick Pay</h3>
                   <p class="detail__info">
                     Haz pagos seguros solo con tu reloj.
                   </p>
@@ -153,12 +153,13 @@ export default {
         opacity: 1,
         x: 0,
         duration: 1,
+        delay: 0.2,
       });
       gsap.to(".hero-image", {
         opacity: 1,
         x: 0,
         duration: 1,
-        delay: 0.5,
+        delay: 0.7,
       });
       gsap.to(".detail-wrapper", {
         opacity: 1,

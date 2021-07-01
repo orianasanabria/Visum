@@ -3,7 +3,7 @@
     <b-container>
       <b-row>
         <b-col cols="12">
-          <h2 class="cart-title mb-4">Lista de Favoritos</h2>
+          <h2 class="cart-title mb-4">Lista de Deseos</h2>
         </b-col>
       </b-row>
       <b-row v-if="favorites.length !== 0" class="mb-5">
