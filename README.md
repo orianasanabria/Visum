@@ -1,8 +1,8 @@
 # Visum | Technology E-Commerce
 
-## About The Project:
+## About The Project
 
-Visum came to life from the idea of ​​creating an e-commerce that would allow me to put into practice everything I learned throughout my journey to become a Frontend Developer.
+Visum came to life from the idea of ​​creating an e-commerce that would allow me to put into practice everything I learned throughout my journey to become a Frontend Developer.</br>
 _Visum from the Latin of View_
 
 ## Website URL
