@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-// import router from './router'
 
 
 Vue.use(VueRouter)
@@ -45,15 +44,14 @@ const routes = [{
     component: () => import( /* webpackChunkName: "notfound" */ '../views/NotFound.vue')
   },
   {
-    path: '/producto/:sku',
-    name: 'Producto',
-    component: () => import( /* webpackChunkName: "producto" */ '../views/Producto.vue')
-  },
-  {
     path: '/:id',
     name: 'Categoria',
     component: () => import( /* webpackChunkName: "categoria" */ '../views/Categoria.vue'),
-    // children: [, ]
+  },
+  {
+    path: '/:id/:sku',
+    name: 'Producto',
+    component: () => import( /* webpackChunkName: "producto" */ '../views/Producto.vue')
   },
 ]
 

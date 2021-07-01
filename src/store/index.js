@@ -18,6 +18,33 @@ export default new Vuex.Store({
     selectedProduct: [],
     shoppingCart: [],
     favorites: [],
+    coupons: [],
+  },
+  getters: {
+    getQuantity(state) {
+      const cartQuantity = state.shoppingCart;
+      if (cartQuantity.length === 0) return 0;
+      const sum = cartQuantity.reduce((acc, x) => acc + x.quantity, 0)
+      return sum;
+    },
+    getNewPrice(state) {
+      const product = state.selectedProduct;
+      const newPrice = product.price
+        .toLocaleString()
+        .replace(",", ".")
+        .replace(",", ".");
+      return newPrice;
+    },
+    getSubtotal(state) {
+      const cart = state.shoppingCart;
+      if (cart && cart.length !== 0) {
+        const eachTotal = cart.map(el => el.total)
+        const subtotal = eachTotal.reduce((acc, x) => acc + x);
+        const newSubtotal = subtotal.toLocaleString().replace(",", ".").replace(",", ".");
+
+        return newSubtotal;
+      } else return 0;
+    },
   },
   mutations: {
     getCategories(state, payload) {
@@ -34,7 +61,6 @@ export default new Vuex.Store({
       Object.entries(state.categories).forEach(([key, value]) => {
         value.id = key;
         value.filter(el => {
-          // if (el.price) el.price = el.price.toLocaleString().replace(',', '.').replace(',', '.');
           if (el.bestSeller === true) state.bestSellers.push(el);
         })
       });
@@ -60,6 +86,7 @@ export default new Vuex.Store({
       const total = price * quantity;
 
       const exists = state.shoppingCart.find((el) => el.id === id);
+
       if (!exists) {
         const soldProduct = {
           id: id,
@@ -71,11 +98,9 @@ export default new Vuex.Store({
           total
         };
         state.shoppingCart.push(soldProduct);
-        console.log("doesnt exist", soldProduct);
       } else {
         exists.quantity = exists.quantity + quantity;
         exists.total = exists.total + price;
-        console.log("exists", exists.quantity, exists.total);
       }
     },
     deleteProduct(state, payload) {
@@ -87,8 +112,13 @@ export default new Vuex.Store({
       } else return;
     },
     getFavoritesLocal(state, payload) {
+      if (!payload) return;
       state.favorites = payload;
-      console.log(payload);
+    },
+    getCouponsLocal(state, payload) {
+      if (!payload) return;
+      state.coupons = payload;
+      console.log(state.coupons);
     },
     addFavoriteLocal(state, payload) {
       const exists = state.favorites.find(el => el.id === payload.id)
@@ -133,6 +163,24 @@ export default new Vuex.Store({
         console.log(error);
       }
     },
+    async getCoupons({
+      commit,
+      state
+    }) {
+      try {
+        const snapshot = await db.collection("coupons").get();
+        const coupons = [];
+        snapshot.forEach((doc) => {
+          let docData = doc.data();
+          coupons.push(docData);
+        })
+        state.coupons = coupons;
+        const eachCoupon = coupons.map(obj => obj);
+        commit("getCouponsLocal", eachCoupon)
+      } catch (error) {
+        console.log(error);
+      }
+    },
     async toggleFavorite({
       commit,
       state
@@ -152,6 +200,5 @@ export default new Vuex.Store({
         await dbFavorite.set(favorite)
       }
     },
-
   },
 })

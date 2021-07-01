@@ -34,7 +34,7 @@ export default {
     NotFound,
   },
   computed: {
-    ...mapState(["categories", "favorites"]),
+    ...mapState(["categories"]),
     categorie() {
       let param = this.$route.params.id;
       if (param === "smartwatches") return this.categories.smartwatches;
@@ -43,9 +43,6 @@ export default {
       else if (param === "keyboards") return this.categories.keyboards;
       else return;
     },
-  },
-  mounted() {
-    this.categorie;
   },
 };
 </script>

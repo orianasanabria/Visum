@@ -8,6 +8,9 @@
   &:hover{
     transition: box-shadow .3s;
     box-shadow: 0px 10px 21px 13px rgba(0, 0, 0, 0.3);
+    .maincard__btn{
+      background-color: $accent;
+    }
   }
   &__img{
     height: 200px;
@@ -29,8 +32,5 @@
     width: 100%;
     padding: .7rem 0;
     border: none;
-    &:hover{
-      background-color: $accent;
-    }
   }
 }

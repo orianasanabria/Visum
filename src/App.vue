@@ -16,11 +16,12 @@ export default {
     MainFooter,
   },
   methods: {
-    ...mapActions(["getData", "getFavorites"]),
+    ...mapActions(["getData", "getFavorites", "getCoupons"]),
   },
   created() {
     this.getData();
     this.getFavorites();
+    this.getCoupons();
   },
 };
 </script>

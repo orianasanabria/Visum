@@ -19,7 +19,6 @@
   }
   .info{
     text-align: left;
-    margin-left: 5rem;
   }
   .hero-image{
     width: 700px;
@@ -46,22 +45,6 @@
       }
     }
   }
-  .strip-container{
-    position: relative;
-    height: 100%;
-    width: 0;
-    
-    .left-strip {
-      position: absolute;
-      height: 90vh;
-      width: 1px;
-      top: 0;
-      left: 0;
-      background: $light-gray;
-      opacity: 0.5;
-    }
-  }
-
   @media (min-width: 1400px) {
     .header-row{
       height: 80vh;

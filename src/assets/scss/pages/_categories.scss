@@ -56,7 +56,10 @@
     &-4{
       color: $dark-gray;
       background-color: $gray;
-      flex-direction: row-reverse;      
+      flex-direction: row-reverse;
+      h3 {
+        width: 5ch;
+      }
       &:hover{
         transition: color .2s ease-in-out;
         color: $white;
@@ -74,6 +77,15 @@
 }
 
 @media (min-width: 992px) {
+  .more {
+      font-weight: $semi-bold;
+    &-4 {
+      margin: 0.5rem;
+    }
+    &-2 {
+      margin: .7rem;
+    }
+  }
   .categories{
     grid-gap: 1rem;
     grid-template-rows: repeat(2, 270px);
@@ -102,6 +114,11 @@
           right: 0;
           bottom: 0;
         }
+        .more-1 {
+          position: absolute;
+          right: 1.5rem;
+          top: 1rem;
+        }
         img{
           width: 60%;
         }
@@ -125,6 +142,11 @@
       &-3 {
         justify-content: space-between;
         position: relative;
+        .more-3{
+          position: absolute;
+          right: 1.5rem;
+          bottom: 1rem;
+        }
         h3{
           font-size: $xxxx-large;
           position: absolute;
@@ -150,6 +172,7 @@
           width: 5ch;
           font-size: $xxxxxx-large;
         }
+        
         img{
           width: 18.75rem;
           height: 100%;

@@ -25,7 +25,7 @@ ol, ul{
 }
 
 .main {
-  min-height: calc(100vh - 115px);
+  min-height: calc(100vh - 130px);
 }
 
 .container{
@@ -37,4 +37,9 @@ ol, ul{
     background-color: $dark-gray;
     font-family: "Poppins", Helvetica, Arial, sans-serif;
     color: #fff;
+}
+
+.main,
+.margin-nav {
+    margin-top: 4.375rem;
 }

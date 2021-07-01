@@ -7,7 +7,9 @@
       <p class="copy">
         Copyright © 2021 | Todos los derechos reservados.
       </p>
-      <router-link class="logo p-3 px-4 m-0" to="/">Ø</router-link>
+      <b-navbar-brand class="logo d-flex align-items-center m-0" to="/">
+        <img src="/img/visumlogo.svg" alt="Logo" width="30px" />
+      </b-navbar-brand>
     </div>
   </b-container>
 </template>

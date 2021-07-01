@@ -5,11 +5,23 @@
         <h2 class="banner__title text-uppercase">Surface Studio</h2>
         <p class="banner__text">
           <span class="fw-bold">
-            Pronto en venta, el estudio creativo definitivo.
+            Subscríbete para ser notificado durante la preventa.
+            <!-- Pronto en venta, el estudio creativo definitivo. -->
           </span>
-          Herramientas intuitivas y la hermosa pantalla ajustable de 28" para
-          desatar tus ideas.
+          El estudio creativo definitivo. Herramientas intuitivas y pantalla
+          ajustable de 28 pulgadas.
         </p>
+        <div
+          class="d-flex mt-3 justify-content-center justify-content-md-start"
+        >
+          <b-form-group>
+            <b-form-input
+              type="email"
+              placeholder="Correo electónico"
+            ></b-form-input>
+          </b-form-group>
+          <b-button class="btn btn-light ms-2">Subscribirme</b-button>
+        </div>
       </div>
     </b-container>
     <b-img class="banner__img" src="img/surface.png" />

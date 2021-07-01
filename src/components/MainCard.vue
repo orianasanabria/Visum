@@ -15,7 +15,7 @@
           @click="toggleFavorite(product), heartToggle($event.target, product)"
           >favorite_border
         </span>
-        <router-link :to="`/producto/${product.id}`">
+        <router-link :to="`/${product.categorie}/${product.id}`">
           <b-img :src="product.img" class="maincard__img m-auto my-4" />
           <b-card-title class="maincard__title text-uppercase">{{
             product.name
@@ -28,7 +28,7 @@
               {{ spec }}
             </li>
           </ul>
-          <h4 class="maincard__price mb-4">${{ product.price }}</h4>
+          <h4 class="maincard__price mb-4">${{ newPrice(product) }}</h4>
         </router-link>
         <b-button
           class="maincard__btn"
@@ -62,6 +62,13 @@ export default {
     ...mapState(["favorites"]),
   },
   methods: {
+    newPrice(product) {
+      const newPrice = product.price
+        .toLocaleString()
+        .replace(",", ".")
+        .replace(",", ".");
+      return newPrice;
+    },
     heartToggle(target, product) {
       this.favorites.find((el) => {
         if (el.id !== product.id) {

@@ -23,7 +23,7 @@
           <b-card-text class="favoritescard__text">
             {{ product.desc }}
           </b-card-text>
-          <h4 class="favoritescard__price mb-4">${{ product.price }}</h4>
+          <h4 class="favoritescard__price mb-4">${{ newPrice(product) }}</h4>
         </router-link>
         <b-button
           class="favoritescard__btn"
@@ -57,6 +57,13 @@ export default {
     ...mapState(["favorites"]),
   },
   methods: {
+    newPrice(product) {
+      const newPrice = product.price
+        .toLocaleString()
+        .replace(",", ".")
+        .replace(",", ".");
+      return newPrice;
+    },
     heartToggle(target, product) {
       this.favorites.find((el) => {
         if (el.id !== product.id) {

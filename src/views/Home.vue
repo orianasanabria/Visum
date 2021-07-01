@@ -4,22 +4,21 @@
       <!-- Header | Start -->
       <header>
         <b-row class="header-row g-0 d-flex align-items-center m-0 p-0">
-          <div class="strip-container">
-            <div class="left-strip"></div>
-          </div>
           <b-col cols="12" lg="6">
             <div class="info mb-5">
-              <p class="subtitle text-uppercase">New | Series 6</p>
-              <h1 class="text-uppercase my-2">Apple Watch</h1>
+              <p class="subtitle text-uppercase">All New | Visum</p>
+              <h1 class="text-uppercase my-2">Smart Watches</h1>
               <p>El futuro de la salud está en tu muñeca.</p>
-              <p class="my-4 price">Desde $199.990</p>
-              <b-button class="btn btn-size btn-rounded btn-outlined me-3"
-                >Ver Más</b-button
+              <p class="my-4 price">Desde $49.990</p>
+              <b-button
+                href="#categories"
+                class="btn btn-size btn-rounded btn-outlined me-3"
+                >Conoce Más</b-button
               >
               <b-button
-                @click="getBestSellers()"
+                :to="`/smartwatches`"
                 class="btn btn-size btn-rounded btn-accent"
-                >Comprar</b-button
+                >Ver Todos</b-button
               >
             </div>
             <div
@@ -43,22 +42,62 @@
         </b-row>
       </header>
       <!-- Categories Section | Start -->
-      <section class="categories text-uppercase" @click="scrollUp">
+      <section
+        id="categories"
+        class="categories text-uppercase"
+        @click="scrollUp"
+      >
         <router-link class="categories__item-1" :to="`/${smartwatches.id}`">
           <b-img src="img/samsungwatch.png" alt="Smart Watches" />
+          <div class="more more-1 d-none d-lg-flex align-items-center">
+            <p class="me-1">
+              explorar
+            </p>
+            <span class="material-icons-outlined">
+              arrow_right_alt
+            </span>
+          </div>
           <h3>Wat-ches</h3>
         </router-link>
         <router-link class="categories__item-2" :to="`/${keyboards.id}`">
-          <h3>Key-boards</h3>
+          <div class="mt-2">
+            <h3>Key-boards</h3>
+            <div class="more more-2 d-none d-lg-flex align-items-center">
+              <p class="me-1">
+                explorar
+              </p>
+              <span class="material-icons-outlined">
+                arrow_right_alt
+              </span>
+            </div>
+          </div>
           <b-img src="img/keychron.png" alt="Smart Watches" />
         </router-link>
         <router-link class="categories__item-3" :to="`/${smartphones.id}`">
           <h3>Smart-Phones</h3>
+          <div class="more more-3 d-none d-lg-flex align-items-center">
+            <p class="me-1">
+              explorar
+            </p>
+            <span class="material-icons-outlined">
+              arrow_right_alt
+            </span>
+          </div>
           <b-img src="img/samsung.png" alt="Smart Watches" />
         </router-link>
         <router-link class="categories__item-4" :to="`/${notebooks.id}`">
           <b-img src="img/macbook.png" alt="Smart Watches" />
-          <h3>Note-books</h3>
+          <div>
+            <div class="more more-4 d-none d-lg-flex align-items-center">
+              <p class="me-1">
+                explorar
+              </p>
+              <span class="material-icons-outlined">
+                arrow_right_alt
+              </span>
+            </div>
+            <h3>Note-books</h3>
+          </div>
         </router-link>
       </section>
       <!-- Top Sellers | Start -->
@@ -81,7 +120,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapMutations, mapState } from "vuex";
 import MainCard from "@/components/MainCard.vue";
 import MainBanner from "@/components/MainBanner.vue";
 export default {
@@ -94,6 +133,7 @@ export default {
     scrollUp() {
       window.scrollTo(0, 0);
     },
+    ...mapMutations(["buyProduct"]),
   },
   computed: {
     ...mapState([

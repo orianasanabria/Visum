@@ -1,5 +1,5 @@
 <template>
-  <div class="check mt-5 mb-4">
+  <div class="check pt-3 mb-4">
     <b-container>
       <b-row class="check">
         <b-col cols="12" class="g-0 mb-2">
@@ -59,7 +59,7 @@
               </div>
 
               <div class="item__price">
-                <p>${{ product.total }}</p>
+                <p>${{ newPrice(product) }}</p>
               </div>
             </b-col>
           </b-row>
@@ -134,6 +134,15 @@ export default {
     return {
       method: "la plataforma de su elección",
     };
+  },
+  methods: {
+    newPrice(product) {
+      const newPrice = product.total
+        .toLocaleString()
+        .replace(",", ".")
+        .replace(",", ".");
+      return newPrice;
+    },
   },
   computed: {
     ...mapState(["shoppingCart"]),
