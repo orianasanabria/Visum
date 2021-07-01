@@ -2,10 +2,8 @@
 
 ## About The Project:
 
-```
 Visum came to life from the idea of ​​creating an e-commerce that would allow me to put into practice everything I learned throughout my journey to become a Frontend Developer.
-*Visum from the Latin of View*
-```
+_Visum from the Latin of View_
 
 ## Website URL
 
