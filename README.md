@@ -1,29 +1,47 @@
-# visum
+# Visum | Technology E-Commerce
+
+## About The Project:
+
+```
+Visum came to life from the idea of ​​creating an e-commerce that would allow me to put into practice everything I learned throughout my journey to become a Frontend Developer.
+*Visum from the Latin of View*
+```
+
+## Website URL
+
+```
+https://visumshop.web.app/
+```
+
+## Style Guide
+
+```
+Color Scheme:
+$accent: #FF4B26;
+$medium-gray: #272A32;
+$dark-gray: #1D2129;
+
+Typefaces:
+$headings: 'Barlow', sans-serif;
+$paragraphs: 'Poppins', sans-serif;
+$links: 'Poppins', sans-serif;
+
+```
 
 ## Project setup
+
 ```
 yarn install
 ```
 
 ### Compiles and hot-reloads for development
+
 ```
-yarn serve
+yarn dev
 ```
 
 ### Compiles and minifies for production
+
 ```
 yarn build
 ```
-
-### Run your unit tests
-```
-yarn test:unit
-```
-
-### Run your end-to-end tests
-```
-yarn test:e2e
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
